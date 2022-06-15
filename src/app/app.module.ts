@@ -4,9 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ZippyComponent } from './zippy/zippy.component';
+import { TodosComponent } from './todos/todos.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosComponent,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
