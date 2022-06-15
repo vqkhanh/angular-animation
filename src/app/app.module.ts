@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { TodosComponent } from './todos/todos.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,8 @@ import { TodosComponent } from './todos/todos.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
