@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 
       state('void', style({ opacity: 0 })),
 
-      transition('void <=> *',[
+      transition(':enter, :leave',[
         animate(2000)
       ]),
 
