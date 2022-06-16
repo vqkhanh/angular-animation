@@ -1,6 +1,6 @@
 
 
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 export let fade = trigger('fade', [
 
@@ -19,6 +19,17 @@ export let fade = trigger('fade', [
     ]),
 
     transition(':leave', [
-        animate(500, style({ transform: 'translateX(-100%)'}))
+        animate('0.5s ease-out', keyframes([
+            style({
+                offset: .2,
+                opacity: 1,
+                transform: 'translateX(20px)'
+            }),
+            style({
+                offset: 1,
+                opacity: 0,
+                transform: 'translateX(-100%)'
+            })
+        ]))
     ])
   ]);
