@@ -1,5 +1,5 @@
 import { bounceOutLeftAnimation, fadeInAnimation } from './../animations';
-import { animate, keyframes, query, state, style, transition, trigger, useAnimation } from '@angular/animations';
+import { animate, animateChild, group, keyframes, query, stagger, state, style, transition, trigger, useAnimation } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,14 +10,18 @@ import { Component, OnInit } from '@angular/core';
 
     trigger('todoAnimation', [
       transition(':enter', [
-        query('h1' , [
-          style({ transform: 'translateY(-20px)' }),
-          animate(1000)
-        ], { optional: true })
+        group([
+          query('h1' , [
+            style({ transform: 'translateY(-20px)' }),
+            animate(1000)
+          ], { optional: true }),
+          query('@todoAnimation2', 
+            stagger(2000, animateChild()), { optional: true })
+        ])
       ])
     ]),
 
-    trigger('todoAnimation', [
+    trigger('todoAnimation2', [
       transition(':enter', [
         useAnimation(fadeInAnimation, {
           params: {
